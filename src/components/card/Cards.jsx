@@ -5,7 +5,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea, CardActions } from '@mui/material';
 import auricular from '../../assets/imgs/auricular.png';
-import ItemCount from '../itemCount/ItemCount';
+import { ItemCount } from '../itemCount/ItemCount';
 import './cards.scss';
 
 
@@ -34,7 +34,7 @@ function Cards () {
                     </Typography>
                 </CardContent>
             </CardActionArea>
-            <CardActions className='itemCount'>
+            <CardActions>
                 <ItemCount stock={ 10 } initial={ 1 }/>
             </CardActions>
         </Card>

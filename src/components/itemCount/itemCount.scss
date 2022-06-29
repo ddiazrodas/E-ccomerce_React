@@ -1,4 +1,22 @@
 .itemCounts {
     color: rgb(78, 113, 255);
     font-weight: 600;
+    margin: auto;
+}
+
+.itemCount {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    
+    div:first-child {
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 1rem;
+    }
+
+    div:nth-child(2) {
+        display: flex;
+        justify-content: center;
+    }
 }
