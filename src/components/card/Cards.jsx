@@ -4,33 +4,31 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea, CardActions } from '@mui/material';
-import auricular from '../../assets/imgs/auricular.png';
+// import auricular from '../../assets/imgs/auricular.png';
 import { ItemCount } from '../itemCount/ItemCount';
 import './cards.scss';
 
 
-function Cards () {
+function Cards ({product}) {
 
+    console.log(product)
+
+    const { pictureURL,  tittle, description, price} = product
 
     return (
-
-        <Card className='card' sx={{ maxWidth: 345 }}>
+        <Card className='card' sx={{ maxWidth: 345, height: 770 }}>
             <CardActionArea>
                 <CardMedia
                     component="img"
                     height="400"
-                    image={auricular}
-                    alt="auricular"
-                />
+                    image={pictureURL}
+                    alt="auricular" /> 
                 <CardContent>
                     <Typography gutterBottom variant="h5" component="div">
-                        GSP 300
+                    {tittle} - $ {price}
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
-                        El auricular GSP 300 es aquel que usarán las personas del mundo gaming que quieran
-                        llevar su juego a un nivel superior. Su almohadillas ultra cómodas y atenuadoras del
-                        sonido exterior, su audio inigualable y su micrófono sumamente silencioso, harán que los
-                        sentidos se concentren únicamente en la partida.
+                    {description}
                     </Typography>
                 </CardContent>
             </CardActionArea>
@@ -40,5 +38,4 @@ function Cards () {
         </Card>
     );
 }
-
 export default Cards;
