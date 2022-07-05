@@ -11,9 +11,8 @@ import './cards.scss';
 
 function Cards ({product}) {
 
-    console.log(product)
 
-    const { pictureURL,  tittle, description, price} = product
+    const { pictureURL,  title, description, price} = product
 
     return (
         <Card className='card' sx={{ maxWidth: 345, height: 770 }}>
@@ -25,7 +24,7 @@ function Cards ({product}) {
                     alt="auricular" /> 
                 <CardContent>
                     <Typography gutterBottom variant="h5" component="div">
-                    {tittle} - $ {price}
+                    {title} -$ {price}
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
                     {description}
