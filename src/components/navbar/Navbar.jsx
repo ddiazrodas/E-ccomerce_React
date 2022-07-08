@@ -14,7 +14,8 @@ const Navbar = () => {
     return (
         <>
             <nav className="colorNav">
-                <img src={logo} href="#" className="tamanioLogo" alt="" />
+                <Link to={`/`}><img src={logo} href="#" className="tamanioLogo" alt="" /></Link>
+                
                 <div className="listaNav">
                     <div className="titulo">
                         <h1>Bienvenido a tienda Sennheiser</h1>
