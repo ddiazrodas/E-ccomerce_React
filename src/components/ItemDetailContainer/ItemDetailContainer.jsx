@@ -1,17 +1,21 @@
 import React, { useEffect, useState } from "react";
-import { getData } from "../../mocks/fakeApi";
+import { getProduct } from "../../mocks/fakeApi";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import { CircularProgress } from "@mui/material";
+import { useParams } from 'react-router-dom';
 
 const ItemDetailContainer = () => {
 
     const [productDetail, setProductDetail] = useState([])
     const [loading, setLoading] = useState(true);
 
+    const {id} = useParams()
+
+
     const getProductDetail = async () => {
 
         try {
-            let response = await getData
+            let response = await getProduct(id)
             setProductDetail(response)
         }
         catch(error){
@@ -24,7 +28,7 @@ const ItemDetailContainer = () => {
 
     useEffect(() => {
         getProductDetail()
-    },[])
+    },[id])
 
     return(
         <>
