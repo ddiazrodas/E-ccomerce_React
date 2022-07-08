@@ -4,6 +4,7 @@ import './itemListContainer.scss';
 // import json from '../../mocks/fakeApi.json'
 import { getData } from "../../mocks/fakeApi";
 import { CircularProgress } from "@mui/material";
+import { useParams } from 'react-router-dom';
 
 
 const ItemListContainer = (props) => {
@@ -13,10 +14,12 @@ const ItemListContainer = (props) => {
     const [productList, setProductList] = useState([]); //indico que es un array
     const [loading, setLoading] = useState(true);
 
+    const { categoryId } = useParams();
+
     const getProducts = async () => {
 
         try {
-            let response = await getData
+            let response = await getData(categoryId)
             setProductList(response)
         }
         catch(error){
@@ -29,7 +32,7 @@ const ItemListContainer = (props) => {
 
     useEffect(() => {
         getProducts()
-    },[])
+    },[categoryId])
 
     return(
         <>

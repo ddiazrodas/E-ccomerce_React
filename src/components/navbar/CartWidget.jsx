@@ -2,7 +2,7 @@ import React from 'react';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import { IconButton } from '@mui/material';
 
-const Cart = () => {
+const CartWidget = () => {
 
     return (
         <IconButton color="primary" size="large" aria-label="add to shopping cart">
@@ -11,4 +11,4 @@ const Cart = () => {
     )
 }
 
-export default Cart;
+export default CartWidget;

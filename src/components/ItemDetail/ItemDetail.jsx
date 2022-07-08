@@ -11,13 +11,11 @@ import '../itemCount/itemCount.scss';
 
 const ItemDetail = ({ productDetail }) => {
 
-    // console.log(productDetail);
-
-    const [firstItem] = productDetail
+    console.log(productDetail);
 
     // console.log(firstItem)
 
-    const { id, title, description, pictureURL, price, specs } = firstItem
+    const { id, title, description, pictureURL, price, specs } = productDetail
 
     // console.log(id, title, description, pictureURL, price, specs);
 
@@ -25,7 +23,7 @@ const ItemDetail = ({ productDetail }) => {
         <>
             <div className="container mt-5">
                 <Card key={id} className="card-detail">
-                    <CardMedia
+                    <CardMedia sx={{ maxWidth: 450 }}
                         component="img"
                         image={pictureURL}
                         alt="Game Zero" />
@@ -35,12 +33,10 @@ const ItemDetail = ({ productDetail }) => {
                                 {title} ${price}
                             </Typography>
                             <Typography variant="body2" color="text.secondary" component="div">
-                                Descripción:
-                                <p>{description}</p>
+                                Descripción: <p>{description}</p>
                             </Typography>
                             <Typography variant="body2" color="text.secondary" component="div">
-                                Especificaciones Técnicas:
-                                <p>{specs}</p>
+                                Especificaciones Técnicas: <p>{specs}</p>
                             </Typography>
                         </CardContent>
                         <CardActions>
