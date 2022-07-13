@@ -1,23 +1,32 @@
 .itemCounts {
-    color: rgb(78, 113, 255);
-    font-weight: 600;
-    margin: auto;
+  color: rgb(78, 113, 255);
+  font-weight: 600;
+  margin: auto;
+  display: flex;
+  justify-content: center;
 }
 
 .itemCount {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    padding-bottom: 1rem;
-    
-    div:first-child {
-        display: flex;
-        justify-content: space-between;
-        padding-bottom: 1rem;
-    }
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-bottom: 1rem;
+//   position: absolute;
+//   bottom: 0;
 
-    div:nth-child(2) {
-        display: flex;
-        justify-content: center;
-    }
+  div:first-child {
+    display: flex;
+    justify-content: space-between;
+  }
+
+//   div:nth-child(2) {
+//     display: flex;
+//     justify-content: center;
+//   }
 }
+
+// .btt-add-cart {
+//   position: absolute;
+//   bottom: 0;
+//   padding-bottom: 1rem;
+// }

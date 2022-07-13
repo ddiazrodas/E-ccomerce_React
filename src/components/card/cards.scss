@@ -1,10 +1,25 @@
 .card {
-    
-    // display: block;
-    // width: 250px;
-    margin: auto;
+  // display: block;
+  // width: 250px;
+  margin: auto;
 
-    // img {
-    //     width: 100%;
-    // }
+  // img {
+  //     width: 100%;
+  // }
 }
+
+.btn-add-cart {
+  display: flex;
+  flex-direction: column;
+}
+
+.btn-add-cart2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ver-detalle {
+    text-decoration: none;
+    padding-bottom: 1rem;
+  }
