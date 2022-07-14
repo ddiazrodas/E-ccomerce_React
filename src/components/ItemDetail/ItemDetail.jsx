@@ -11,26 +11,24 @@ import './itemDetails.scss';
 import { ItemCount } from "../itemCount/ItemCount";
 import '../itemCount/itemCount.scss';
 import { Link } from "react-router-dom";
+import { cartContext } from "../Context/CartContext";
+import { useContext } from "react";
 
 const ItemDetail = ({ productDetail }) => {
 
     const [buttonState, setButtonState] = useState(false)
+    const { addProduct } = useContext(cartContext)
 
-    const handleClick = () => {
+    const onAdd = (amount) => {
 
-        try {
-            setButtonState(true);
+        // const producto = {...productDetail, qty: count}; forma clara
+        addProduct({ ...productDetail, qty: amount }); //a la funcion addProduct que esta en context, le paso como parametro la copia del array+qty
+        setButtonState(true);
 
-            setTimeout(() => {
-                setButtonState(false)
-            }, 4000)
-        }
-        catch (error) {
-            console.log(error);
-        }
+        setTimeout(() => {
+            setButtonState(false)
+        }, 2000)
     }
-
-    console.log(productDetail);
 
     const { id, title, description, pictureURL, price, specs, stock } = productDetail;
 
@@ -59,9 +57,8 @@ const ItemDetail = ({ productDetail }) => {
                     <CardActions className="justify-content-center">
 
                         <div className="d-flex flex-column">
-                
-                            {buttonState ? <Link to="/Cart"><Button>Finalizar Compra</Button></Link> : (<><ItemCount stock={stock} initial={1} />
-                            <Button onClick={handleClick} variant='contained' color='primary' endIcon={<SendIcon />}>Agregar al Carrito</Button></>)}
+                            {buttonState ? <Link to="/Cart"><Button>Finalizar Compra</Button></Link>
+                                : <ItemCount stock={stock} initial={1} onAdd={onAdd} />}
                         </div>
                     </CardActions>
                 </div>

@@ -26,7 +26,7 @@ const Navbar = () => {
                                 {category.name}
                             </Link>
                         ))}
-                        <li><CartWidget /></li>
+                        <Link to={"/Cart"}><CartWidget /></Link>
                     </ul>
                 </div>
             </nav>

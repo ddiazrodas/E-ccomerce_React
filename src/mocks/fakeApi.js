@@ -86,11 +86,7 @@ export const getData = (categoryId) => {
 export const getProduct = (id) => {
   return new Promise ((resolve, reject) => {
 
-    console.log(id);
-
     const productsEncontrado = products.find(prod => prod.id === +id)
-
-    console.log(productsEncontrado);
 
     setTimeout(() => {
       resolve(productsEncontrado);
