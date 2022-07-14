@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useState } from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
@@ -15,6 +16,16 @@ import './cards.scss';
 function Cards({ product }) {
 
     const { id, pictureURL, title, description, price, stock } = product
+
+    const [buttonState, setButtonState] = useState(false)
+
+    const onAdd = (count) => {
+        setButtonState(true);
+
+        setTimeout(() => {
+            setButtonState(false)
+        }, 2000)
+    }
 
     return (
         <Card className='card' sx={{ maxWidth: 345, height: 900 }}>
@@ -37,9 +48,10 @@ function Cards({ product }) {
                 </CardContent>
             </CardActionArea>
             <CardActions className='btn-add-cart'>
-                <ItemCount stock={stock} initial={1} />
+
                 <div className='btn-add-cart2 position-absolute bottom-0'>
-                    <Button className='mb-4' variant='contained' color='primary' endIcon={<SendIcon />}>Agregar al carrito</Button>
+                    {buttonState ? <Link to="/Cart"><Button>Finalizar Compra</Button></Link> : <ItemCount stock={stock} initial={1} onAdd={onAdd} />}
+                    {/* <Button className='mb-4' variant='contained' color='primary' endIcon={<SendIcon />}>Agregar al carrito</Button> */}
                     <Link className='ver-detalle' to={`/detail/${id}`}>Ver detalle</Link>
                 </div>
             </CardActions>
