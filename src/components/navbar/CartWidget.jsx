@@ -11,7 +11,10 @@ const CartWidget = () => {
         <>
         <IconButton color="primary" size="large" aria-label="add to shopping cart">
             <AddShoppingCartIcon fontSize="large"/>
-            <small className='fs-5'>{qtyProducts}</small>
+            {qtyProducts > 0 ?<small className='fs-5'>{qtyProducts}</small>
+            :
+            <small></small>
+            }
         </IconButton>
         
         </>

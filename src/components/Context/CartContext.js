@@ -46,7 +46,7 @@ const CartCustomProvider = ({ children }) => {
 
   const checkCartList = (id) => {
     // validar en la lista si el producto existe con un find o indexOf
-    console.log("verificar si un producto coincide con la lista"); //el find devuelve lo que encontró
+    //console.log("verificar si un producto coincide con la lista"); //el find devuelve lo que encontró
     const found = products.find((product) => product.id === id);
     return found ? true : false;
 
@@ -55,10 +55,15 @@ const CartCustomProvider = ({ children }) => {
 
   const clear = () => {
     setProducts([]);
+    setQtyProducts([]);
   };
 
+  const calculateTotal = () => {
+    return products.reduce((contador, product) => contador + (product.price * product.qty), 0)
+  }
+
   return (
-    <Provider value={{ products, addProduct, delProduct, qtyProducts, clear }}>
+    <Provider value={{ products, addProduct, delProduct, qtyProducts, clear, calculateTotal }}>
       {children}
     </Provider>
   );
