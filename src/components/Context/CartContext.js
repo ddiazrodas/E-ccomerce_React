@@ -6,18 +6,20 @@ const { Provider } = cartContext;
 const CartCustomProvider = ({ children }) => {
   const [products, setProducts] = useState([]);
   const [qtyProducts, setQtyProducts] = useState([0]);
+  const [totalCompra, setCalculateTotal] = useState(0);
 
   const getQtyProducts = () => {
     // obtener cantidad de productos en la lista con un foreach y quizas con un reduce sumar el total de la compra
     console.log(products);
     let qty = 0;
-    products.forEach(product => qty += product.qty);
+    products.forEach((product) => (qty += product.qty));
     setQtyProducts(qty);
     console.log(qty);
   };
 
   useEffect(() => {
     getQtyProducts();
+    calculateTotal();
   }, [products]);
 
   const addProduct = (product) => {
@@ -59,11 +61,30 @@ const CartCustomProvider = ({ children }) => {
   };
 
   const calculateTotal = () => {
-    return products.reduce((contador, product) => contador + (product.price * product.qty), 0)
-  }
+
+    setCalculateTotal(products.reduce(
+      (contador, product) => contador + product.price * product.qty,
+      0
+    ));
+
+    // return products.reduce(
+    //   (contador, product) => contador + product.price * product.qty,
+    //   0
+    // );
+  };
 
   return (
-    <Provider value={{ products, addProduct, delProduct, qtyProducts, clear, calculateTotal }}>
+    <Provider
+      value={{
+        products,
+        addProduct,
+        delProduct,
+        qtyProducts,
+        clear,
+        calculateTotal,
+        totalCompra,
+      }}
+    >
       {children}
     </Provider>
   );
