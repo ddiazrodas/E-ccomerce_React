@@ -40,7 +40,6 @@ const CartCustomProvider = ({ children }) => {
   const delProduct = (id) => {
     // eliminar el producto que tiene el id usando filter
     setProducts(products.filter((product) => product.id !== id)); //me devuelve un nuevo array que lo seteo y cambio el estado, eliminando el que le paso por parametro
-    console.log("eliminar producto");
   };
 
   const checkCartList = (id) => {
