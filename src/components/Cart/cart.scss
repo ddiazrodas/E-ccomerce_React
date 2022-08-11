@@ -1,11 +1,27 @@
-.item-cart{
-    display: flex;
+.item-cart {
+  display: flex;
+
+  .text-cart {
+    font-family: "Courier New", Courier, monospace;
+    font-weight: 600;
+    color: rgb(50, 50, 204);
+    font-size: x-large;
+  }
 }
 
-.item-cart-img{
-    width: 30%;
+.total {
+    font-family: "Courier New", Courier, monospace;
+    font-weight: 600;
+    color:rgb(50, 50, 204);
+    font-size: xx-large;
+}
 
-    img{
-        width: 30%;
-    }
+.item-cart-img {
+  width: 40%;
+  display: flex;
+
+  img {
+    width: 40%;
+    margin: auto;
+  }
 }

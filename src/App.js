@@ -15,15 +15,13 @@ function App() {
           <Routes>
             <Route
               path="/"
-              element={<ItemListContainer greeting="Lista de Productos" />}
+              element={<ItemListContainer greeting="PEDIDOS ÚNICAMENTE VÍA WEB" />}
             />
             <Route
               path="/category/:categoryId"
               element={<ItemListContainer />}
             />
             <Route path="/detail/:id" element={<ItemDetailContainer />} />{" "}
-            {/* el :id significa q es dinamica, 
-          cambia la ruta si hay mas componentes, el id se setea con el useParams */}
             <Route path="/Cart" element={<Cart />} />
           </Routes>
         </CartCustomProvider>

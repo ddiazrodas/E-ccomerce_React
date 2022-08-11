@@ -1,10 +1,29 @@
 import { Link, NavLink } from 'react-router-dom';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import logo from '../../assets/imgs/logo.png';
 import CartWidget from './CartWidget';
 import './navbar.scss';
 
 const Navbar = () => {
+
+    const [header, setHeader] = useState(false);
+
+    const changeBackGround = () => {
+        if (window.scrollY >= 80) {
+            setHeader(true)
+        }
+        else {
+            setHeader(false)
+        }
+    }
+
+    useEffect(() => {
+        window.addEventListener('scroll', changeBackGround);
+    
+        return () => {
+          window.removeEventListener('scroll', changeBackGround);
+        };
+      }, [window.scrollY]);
 
     const categories = [
         { id: 1, path: '/', name: 'Home' },
@@ -13,27 +32,24 @@ const Navbar = () => {
 
     return (
         <>
-            <header className='header'>
-                <nav class="navbar navbar-expand-lg">
-                    <div class="container-fluid">
+            <header className={header ? 'header active' : 'header'}>
+                <nav className="navbar navbar-expand-lg">
+                    <div className="container-fluid">
                         <Link to={`/`}><img src={logo} href="#" className="tamanioLogo" alt="" /></Link>
-                        <button class="navbar-toggler bg-light btn-hamburger" type="button" data-bs-toggle="collapse"
+                        <button className="navbar-toggler bg-light btn-hamburger" type="button" data-bs-toggle="collapse"
                             data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                             aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
+                            <span className="navbar-toggler-icon"></span>
                         </button>
-                        <div class="collapse navbar-collapse text-end" id="navbarSupportedContent">
-                            {/* <div className="titulo">
-                                <h1>Bienvenido a tienda Sennheiser</h1>
-                            </div> */}
-                            <ul class="nav__list navbar-nav ms-auto mb-2 mb-lg-0">
+                        <div className="collapse navbar-collapse text-end" id="navbarSupportedContent">
+                            <ul className="nav__list navbar-nav ms-auto mb-2 mb-lg-0">
                                 {categories.map((category) => (
-                                    <li class="nav-item pe-5"><NavLink classNameclass="nav__link nav-link" to={category.path} key={category.id} >
+                                    <li key={category.id} className="nav-item pe-5"><NavLink style={{textDecoration: "none"}} to={category.path} key={category.id} >
                                         {category.name}
                                     </NavLink>
                                     </li>
                                 ))}
-                                <Link to={"/Cart"}><CartWidget /></Link>
+                                <Link style={{marginRight: "2rem", textDecoration: "none"}} to={"/Cart"}><CartWidget /></Link>
                             </ul>
                         </div>
                     </div>

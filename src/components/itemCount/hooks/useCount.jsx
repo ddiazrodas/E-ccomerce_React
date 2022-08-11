@@ -7,7 +7,6 @@ const useCount = (stock, initial) => {
     const count = (value) => {
 
         let result = amount + value; // debemos guardar en una variable lo acumulado en amount
-        //sino amount=stock, muere la app
 
         if (result <= stock) {
             setAmount(amount + value);
