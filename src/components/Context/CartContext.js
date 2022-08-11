@@ -20,30 +20,26 @@ const CartCustomProvider = ({ children }) => {
   }, [products]);
 
   const addProduct = (product) => {
-    // con un setProduct con product y spread, validando que el producto no exista en la lista
 
     if (checkCartList(product.id)) {
-      //le paso el id a la funcion checkCartList para revisar si está ya el producto
-
-      const found = products.find((p) => p.id === product.id); //q traiga el que coincide con el ID, para pedir que lo saque luego
-      const index = products.indexOf(found); // me indica en que posicion esta ubicado del array
-      const aux = [...products]; //hago una copia de estado, ya que no se puede hacer el cambio directo
-      aux[index].qty += product.qty; //y que en la posicion del producto al q queremos modificar la cantidad, la actualice
+      
+      const found = products.find((p) => p.id === product.id); 
+      const index = products.indexOf(found); 
+      aux[index].qty += product.qty; 
       setProducts(aux);
 
-      //forma resumida PRO seria:  aux[products.indexOf(products.find(p => p.id === product.id))].qty += product.qty
     } else {
-      setProducts([...products, product]); //si el producto no está, seteo el estado del array de producst agregando el nuevo
+      setProducts([...products, product]);
     }
   };
 
   const delProduct = (id) => {
-    // eliminar el producto que tiene el id usando filter
-    setProducts(products.filter((product) => product.id !== id)); //me devuelve un nuevo array que lo seteo y cambio el estado, eliminando el que le paso por parametro
+
+    setProducts(products.filter((product) => product.id !== id));
   };
 
   const checkCartList = (id) => {
-    // validar en la lista si el producto existe con un find o indexOf
+
     const found = products.find((product) => product.id === id);
     return found ? true : false;
   };
