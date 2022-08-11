@@ -23,7 +23,7 @@ Proyecto final realizado como entrega para Coderhouse. Consta de un armado de un
 
 # Presentación: 
 
-![video por si la crashea](./public/2022-08-10-23-20-17_OAA5JlpQ.mp4)
+Video por si crashea: https://youtu.be/VaoADu-HVP4
 
 
 # Getting Started with Create React App
