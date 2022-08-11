@@ -19,15 +19,17 @@ export const ItemCount = (props) => {
     return (
         <>
             <div className='itemCount'>
-                <div>
+
+                <div className='mb-4'>
                     <Button onClick={() => count(-1)}><RemoveIcon /></Button>
-                    <div>
-                        <span className='itemCounts'> Cantidad: {amount} </span>
-                        <span className='itemCounts'> Stock: {stock} </span>
-                    </div>
+                    <span className='itemCounts'> Cantidad: {amount} </span>
+                    <span className='itemCounts'> Stock: {stock} </span>
                     <Button onClick={() => count(+1)}><AddIcon /></Button>
+                </div>
+                <div>
                     <Button onClick={() => handleClickAddToCart()} variant='contained' color='primary' endIcon={<SendIcon />}>Agregar al Carrito</Button>
                 </div>
+
             </div>
         </>
     )

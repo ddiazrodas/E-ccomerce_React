@@ -1,3 +1,31 @@
+# Bienvenido a Tienda Gamer
+### Este proyecto fue realizado con:  
+
+* React
+* React Router Dom
+* Javascript
+* HTML
+* SASS
+* Material UI
+* Bootstrap 5
+* Firebase
+* SweetAlert 2
+
+### Pasos para reproducir la APP:
+1. Clonar el repo(https://docs.github.com/es/repositories/creating-and-managing-repositories/cloning-a-repository)
+   ```[Repositorio](https://github.com/ddiazrodas/E-ccomerce_React)```
+2. Hacer un npm i
+3. Hacer un npm start
+
+### Características 
+
+Proyecto final realizado como entrega para Coderhouse. Consta de un armado de un E-commerce (comercio electrónico) mostrando una lisda de productos, ingresar a cada uno mostrando mas detalles del mismo, agregar los mismo a un carrito de compra, y podes comprar 1 o mas productos mostrados.
+
+# Presentación: 
+
+![video por si la crashea](./public/2022-08-10-23-20-17_OAA5JlpQ.mp4)
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

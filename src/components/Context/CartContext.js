@@ -9,12 +9,9 @@ const CartCustomProvider = ({ children }) => {
   const [totalCompra, setCalculateTotal] = useState(0);
 
   const getQtyProducts = () => {
-    // obtener cantidad de productos en la lista con un foreach y quizas con un reduce sumar el total de la compra
-    console.log(products);
     let qty = 0;
     products.forEach((product) => (qty += product.qty));
     setQtyProducts(qty);
-    console.log(qty);
   };
 
   useEffect(() => {
@@ -48,11 +45,8 @@ const CartCustomProvider = ({ children }) => {
 
   const checkCartList = (id) => {
     // validar en la lista si el producto existe con un find o indexOf
-    //console.log("verificar si un producto coincide con la lista"); //el find devuelve lo que encontró
     const found = products.find((product) => product.id === id);
     return found ? true : false;
-
-    // return products.some(products => products.id ===id); //el some devuelve booleano, lo encontró?si o no
   };
 
   const clear = () => {
@@ -66,11 +60,6 @@ const CartCustomProvider = ({ children }) => {
       (contador, product) => contador + product.price * product.qty,
       0
     ));
-
-    // return products.reduce(
-    //   (contador, product) => contador + product.price * product.qty,
-    //   0
-    // );
   };
 
   return (

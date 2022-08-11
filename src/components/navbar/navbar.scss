@@ -1,8 +1,25 @@
-// .colorNav {
-//     background-color: rgb(218, 218, 218);
-//     display: flex;
-//     padding: 0 1rem;
-//   }
+
+.header{
+  background: transparent;
+  height: 220px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 1.2rem;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 600;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+
+  nav{
+    width: 100%;
+  }
+}
+
+.header.active {
+  background: linear-gradient(90deg, rgb(255, 255, 255), rgb(255, 255, 255) 100%);
+}
 
 .tamanioLogo {
   width: 100px;
@@ -13,97 +30,13 @@
   filter: drop-shadow(2px 4px 6px black);
 }
 
-// .header {
-//   --text: #190707;
-//   --text-inverse: #333;
-//   --background: solid;
-//   position: fixed;
-//   top: 0;
-//   left: 0;
-//   right: 0;
-//   z-index: 99999;
-//   padding: 2em 3em;
-//   transition: background 250ms ease-in;
-//   background: var(--background);
-//   color: var(--text);
-// }
-
 .nav__list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
+  align-items: center;
 }
 
-// a {
-//   --spacing: 1em;
-//   text-decoration: none;
-//   color: inherit !important;
-//   display: inline-block;
-//   padding: calc(var(--spacing) / 2) var(--spacing);
-//   position: relative;
-//   text-transform: uppercase;
-//   letter-spacing: 2px;
-//   font-size: 1.2rem;
-//   font-weight: 800;
+@media (min-width: 0px) and (max-width: 991.98px) {
+  .nav__list {
+    align-items: flex-end;
+  }
+}
 
-//   &:after {
-//     content: "";
-//     position: absolute;
-//     bottom: 0;
-//     left: var(--spacing);
-//     right: var(--spacing);
-//     height: 2px;
-//     background: currentColor;
-//     -webkit-transform: scaleX(0);
-//     transform: scaleX(0);
-//     transition: -webkit-transform 150ms ease-in-out;
-//     transition: transform 150ms ease-in-out;
-//     transition: transform 150ms ease-in-out, -webkit-transform 150ms ease-in-out;
-//   }
-//   &:hover::after {
-//     -webkit-transform: scaleX(1);
-//     transform: scaleX(1);
-//     color: red;
-//   }
-// }
-
-
-// .titulo{
-//     display: flex;
-//     justify-content: center;
-//     width: 100%;
-
-//     h1 {
-//         display: flex;
-//         align-items: center;
-//         justify-content: center;
-//       }
-// }
-
-// .listaNav {
-//   display: flex;
-//   width: 100%;
-//   justify-content: end;
-
-//   ul {
-//     list-style: none;
-//     display: flex;
-//     align-items: center;
-//     gap: 1rem;
-//     font-size: 20px;
-//     font-weight: 600;
-
-//     li {
-//       transition: 120ms;
-//     }
-//     a {
-//         text-decoration: none;
-//         color: inherit;
-
-//         &:hover {
-//             color: rgb(40, 40, 255);
-//           }
-//     }
-//   }
-// }

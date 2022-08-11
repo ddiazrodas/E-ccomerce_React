@@ -12,19 +12,6 @@ const ItemDetailContainer = () => {
 
     const { id } = useParams()
 
-    // const getProductDetail = async () => {
-    //     try {
-    //         let response = await getProduct(id)
-    //         setProductDetail(response)
-    //     }
-    //     catch(error){
-    //         console.error(error);
-    //     }
-    //     finally{
-    //         setLoading(false)
-    //     }
-    // }
-
     useEffect(() => {
 
         const productsCollection = collection(db, 'productos');//taigo el collecion de productos
@@ -38,7 +25,6 @@ const ItemDetailContainer = () => {
             .catch(err => console.log(err))
             .finally(() => setLoading(false))
 
-        // getProductDetail()
     }, [id])
 
     return (

@@ -6,7 +6,6 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import SendIcon from '@mui/icons-material/Send';
 import './itemDetails.scss';
 import { ItemCount } from "../itemCount/ItemCount";
 import '../itemCount/itemCount.scss';
@@ -21,7 +20,6 @@ const ItemDetail = ({ productDetail }) => {
 
     const onAdd = (amount) => {
 
-        // const producto = {...productDetail, qty: count}; forma clara
         addProduct({ ...productDetail, qty: amount }); //a la funcion addProduct que esta en context, le paso como parametro la copia del array+qty
         setButtonState(true);
 
@@ -34,34 +32,32 @@ const ItemDetail = ({ productDetail }) => {
 
     return (
         <>
-            <Card key={id} className="card-detail container mt-5">
-                <CardMedia sx={{ maxWidth: 450 }}
-                    component="img"
-                    image={pictureURL}
-                    alt="Game Zero" />
-                <div display="block">
-                    <CardContent>
-                        <Typography gutterBottom variant="h2" component="div">
-                            {title}
-                        </Typography>
-                        <Typography gutterBottom variant="h2" component="div">
-                            ${price}
-                        </Typography>
-                        <Typography variant="body2" color="text.secondary" component="div">
-                            Descripción: <p>{description}</p>
-                        </Typography>
-                        <Typography variant="body2" color="text.secondary" component="div">
-                            Especificaciones Técnicas: <p>{specs}</p>
-                        </Typography>
-                    </CardContent>
-                    <CardActions className="justify-content-center">
 
-                        <div className="d-flex flex-column">
-                            {buttonState ? <Link to="/Cart"><Button>Finalizar Compra</Button></Link>
-                                : <ItemCount stock={stock} initial={1} onAdd={onAdd} />}
-                        </div>
-                    </CardActions>
-                </div>
+            <Card key={id} className="card-detail container">
+                <CardMedia className="img-detail"
+                    component="img"
+                    alt="articulo seleccionado"
+                    height="450"
+                    image={pictureURL}
+                />
+                <CardContent>
+                    <Typography gutterBottom variant="h5" component="div">
+                        {title}
+                    </Typography>
+                    <Typography gutterBottom variant="h5" component="div">
+                        ${price}
+                    </Typography>
+                    <Typography variant="body2" color="text.secondary">
+                        Descripción: {description}
+                    </Typography>
+                    <Typography variant="body2" color="text.secondary" component="div">
+                        Especificaciones Técnicas: {specs}
+                    </Typography>
+                </CardContent>
+                <CardActions className="add-to-cart">
+                    {buttonState ? <Link to="/Cart"><Button>Finalizar Compra</Button></Link>
+                        : <ItemCount stock={stock} initial={1} onAdd={onAdd} />}
+                </CardActions>
             </Card>
         </>
     )

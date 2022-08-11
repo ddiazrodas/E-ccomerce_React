@@ -1,11 +1,12 @@
 .card {
-  // display: block;
-  // width: 250px;
   margin: auto;
+  margin-bottom: 2rem;
+  transition: 1000ms;
 
-  // img {
-  //     width: 100%;
-  // }
+  &:hover {
+    transition: 1000ms;
+    filter: drop-shadow(2px 4px 25px black);
+  }
 }
 
 .btn-add-cart {
@@ -14,12 +15,12 @@
 }
 
 .btn-add-cart2 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .ver-detalle {
-    text-decoration: none;
-    padding-bottom: 1rem;
-  }
+  text-decoration: none;
+  padding-bottom: 1rem;
+}
