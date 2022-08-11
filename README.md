@@ -1,5 +1,5 @@
 # Bienvenido a Tienda Gamer
-### Este proyecto fue realizado con las dependencias:  
+### Este proyecto fue realizado con las dependencias y herramientas:  
 
 * React v18.2.0
 * React Router Dom v6.3.0
