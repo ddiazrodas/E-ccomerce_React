@@ -1,4 +1,7 @@
 # Bienvenido a Tienda Gamer
+
+## APP Web de la tienda: https://tienda-gamer.netlify.app/
+
 ### Este proyecto fue realizado con las dependencias y herramientas:  
 
 * React v18.2.0
